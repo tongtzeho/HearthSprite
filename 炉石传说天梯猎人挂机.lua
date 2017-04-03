@@ -46,8 +46,6 @@ function battle(fuzzy)
 		curstate = getState(fuzzy)
 		if (curstate == 3) then
 			break
-		elseif (curstate == 4 or curstate == 5) then
-			return
 		end
 		pickpoint = {}
 		findgreen = false
@@ -74,12 +72,13 @@ function battle(fuzzy)
 		else
 			touchMove(1, 516, 103)
 			mSleep(math.random(80, 200))
-			touchUp(1, 516, 103)
-			mSleep(math.random(800, 1200)) -- 成功出牌
+			touchUp(1, 516, 103)  -- 成功出牌
+			mSleep(math.random(400, 600))
 			i = i + 1
 		end		
 	end
-	if (not shot) then
+	mSleep(math.random(400, 600))
+	if (isSharpGreen(635, 400) and isSharpGreen(562, 408) and isSharpGreen(586, 370) and isSharpGreen(616, 374)) then
 		touchDown(1, 601, 410) -- 稳固射击
 		mSleep(math.random(80, 200))
 		touchUp(1, 601, 410)
@@ -91,13 +90,11 @@ function battle(fuzzy)
 		curstate = getState(fuzzy)
 		if (curstate == 3) then
 			break
-		elseif (curstate == 4 or curstate == 5) then
-			return
 		end
 		fromxarr = {}
 		findgreen = false
 		for j = 266,754,1 do
-			if (isSharpGreen(j, 274) and isSharpGreen(j, 273)) then
+			if (isSharpGreen(j, 300) and isSharpGreen(j, 301)) then
 				findgreen = true
 				table.insert(fromxarr, j)
 			end
@@ -105,7 +102,7 @@ function battle(fuzzy)
 		if (not findgreen) then
 			break
 		end
-		fromx = fromxarr[math.ceil(math.random()*(#fromxarr))]
+		fromx = fromxarr[math.ceil(math.random()*(#fromxarr))]-13
 		taunt = false
 		if (math.random() < 0.9) then -- 攻击对方英雄
 			touchDown(1, fromx, 288)
@@ -148,7 +145,6 @@ function battle(fuzzy)
 				touchMove(1, tox, 199)
 				mSleep(math.random(80, 200))
 				touchUp(1, tox, 199)
-				mSleep(math.random(800, 1200))
 				i = i + 0.5
 			end
 		end
@@ -181,7 +177,6 @@ function battle(fuzzy)
 				touchMove(1, tox, 199)
 				mSleep(math.random(80, 200))
 				touchUp(1, tox, 199)
-				mSleep(math.random(800, 1200))
 				i = i + 0.5
 			end
 		end		
@@ -197,6 +192,9 @@ math.randomseed(os.time())
 
 while (true) do
 	state = getState(75)
+	touchDown(1, 273, 50)
+	mSleep(100)
+	touchUp(1, 273, 50)
 	if (state == 3) then
 		touchDown(1, 810, 249)  -- 结束回合按钮
 		mSleep(100)
@@ -225,9 +223,6 @@ while (true) do
 		touchUp(1, 725, 435)
 		mSleep(4000)
 	else
-		touchDown(1, 924, 240)
-		mSleep(100)
-		touchUp(1, 924, 240)
 		mSleep(3000)
 	end
 end
