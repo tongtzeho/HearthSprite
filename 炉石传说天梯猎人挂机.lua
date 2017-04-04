@@ -14,6 +14,8 @@ function getState(fuzzy)
 		return 3 -- 结束战斗
 	elseif (isColor(240, 81, 0x4f1515, fuzzy) and isColor(545, 83, 0x8c2615, fuzzy) and isColor(773, 435, 0x36d9ff, fuzzy) and isColor(799, 161, 0x7f2417, fuzzy)) then
 		return 6 -- 对战模式主界面
+	elseif (isColor( 306, 94, 0xc18949, fuzzy) and isColor(279, 413, 0x3f221b, fuzzy) and isColor(671, 284, 0xaf7336, fuzzy) and isColor(591, 30, 0xbf8b40, fuzzy)) then
+		return 7 -- 游戏主界面
 	else
 		return 0 -- 未知状态
 	end
@@ -78,12 +80,10 @@ function battle(fuzzy)
 		end		
 	end
 	mSleep(math.random(400, 600))
-	if (isSharpGreen(635, 400) and isSharpGreen(562, 408) and isSharpGreen(586, 370) and isSharpGreen(616, 374)) then
-		touchDown(1, 601, 410) -- 稳固射击
-		mSleep(math.random(80, 200))
-		touchUp(1, 601, 410)
-		mSleep(math.random(2800, 3200))
-	end
+	touchDown(1, 601, 410) -- 稳固射击
+	mSleep(math.random(80, 200))
+	touchUp(1, 601, 410)
+	mSleep(math.random(800, 1200))
 	boardx = {307, 341, 375, 409, 443, 477, 511, 545, 579, 613, 647, 681, 715}
 	i = 0
 	while i <= 9 do
@@ -124,7 +124,7 @@ function battle(fuzzy)
 					hit = true
 					break
 				end
-				tox = tox + 34
+				tox = tox + 17
 			end
 			if (hit) then
 				touchDown(1, fromx, 288)
@@ -166,7 +166,7 @@ function battle(fuzzy)
 						break
 					end
 				end
-				tox = tox + 34
+				tox = tox + 17
 			end
 			if (hit) then
 				i = i + 1
@@ -221,6 +221,11 @@ while (true) do
 		touchDown(1, 725, 435) -- 开始对战（没有选择标准/狂野）
 		mSleep(100)
 		touchUp(1, 725, 435)
+		mSleep(4000)
+	elseif (state == 7) then -- 选对战模式
+		touchDown(1, 510, 161)
+		mSleep(100)
+		touchUp(1, 510, 161)
 		mSleep(4000)
 	else
 		mSleep(3000)
