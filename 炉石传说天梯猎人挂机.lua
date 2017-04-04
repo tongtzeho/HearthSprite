@@ -1,5 +1,10 @@
 require "TSLib"
 
+function isSharpYellow(x, y)
+	r ,g, b = getColorRGB(x, y)
+	return r >= 220 and g >= 240 and b < 10
+end
+
 function isSharpGreen(x, y)
 	r ,g, b = getColorRGB(x, y)
 	return g == 255 and b < 150
@@ -36,11 +41,11 @@ function battle(fuzzy)
 		mSleep(math.random(800, 1200))
 	end
 	shot = false
-	if (math.random() < 0.7) then
+	if (math.random() < 0.5) then
 		touchDown(1, 601, 410) -- 稳固射击
 		mSleep(math.random(80, 200))
 		touchUp(1, 601, 410)
-		mSleep(math.random(800, 1200))
+		mSleep(math.random(2800, 3200))
 		shot = true
 	end
 	i = 0
@@ -52,7 +57,7 @@ function battle(fuzzy)
 		pickpoint = {}
 		findgreen = false
 		for j = 266,689,1 do
-			if (isSharpGreen(j, 530) and isSharpGreen(j, 529)) then
+			if ((isSharpGreen(j, 530) and isSharpGreen(j, 529)) or (isSharpYellow(j, 530) and isSharpYellow(j, 529))) then
 				findgreen = true
 				table.insert(pickpoint, j)
 			end
@@ -75,6 +80,10 @@ function battle(fuzzy)
 			touchMove(1, 516, 103)
 			mSleep(math.random(80, 200))
 			touchUp(1, 516, 103)  -- 成功出牌
+			mSleep(math.random(400, 600))
+			touchDown(1, 516, 103)
+			mSleep(math.random(80, 200))
+			touchUp(1, 516, 103) -- 战吼，攻击对方英雄
 			mSleep(math.random(400, 600))
 			i = i + 1
 		end		
