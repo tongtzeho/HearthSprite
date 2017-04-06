@@ -72,7 +72,7 @@ function battle(fuzzy)
 		mSleep(math.random(80, 200))
 		touchMove(1, 515, 371)
 		mSleep(math.random(80, 200))
-		if (isColor(513, 385, 0x4e5868, 95) or (isColor( 659,  342, 0xe3dacb, fuzzy) and isColor( 572,  332, 0xede5dc, fuzzy) and isColor( 597,  294, 0xdfd7c7, fuzzy) and isColor( 636,  294, 0xdbd3c3, fuzzy) and isColor( 581,  361, 0xeae0d2, fuzzy))) then
+		if (isColor(513, 385, 0x4e5868, 95) or (isColor(621, 333, 0x010101) and isColor(663, 309, 0x000000) and isColor(596, 330, 0x030302) and isColor(573, 311, 0x000000))) then
 			touchUp(1, 515, 371)
 			mSleep(math.random(100, 200)) -- 法力值不够
 			i = i + 0.4
