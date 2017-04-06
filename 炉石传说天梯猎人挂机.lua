@@ -80,7 +80,7 @@ function battle(fuzzy)
 			touchMove(1, 516, 103)
 			mSleep(math.random(80, 200))
 			touchUp(1, 516, 103)  -- 成功出牌
-			mSleep(math.random(400, 600))
+			mSleep(math.random(800, 1200))
 			touchDown(1, 516, 103)
 			mSleep(math.random(80, 200))
 			touchUp(1, 516, 103) -- 战吼，攻击对方英雄
