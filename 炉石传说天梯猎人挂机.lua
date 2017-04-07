@@ -215,9 +215,9 @@ while (true) do
 		mSleep(100)
 		touchUp(1, 514, 423)
 	elseif (state == 6) then -- 选卡组、选模式、开始
-		touchDown(1, 512, 141) -- 选卡组（右上角的卡组）
+		touchDown(1, 274, 142) -- 选卡组（左上角的卡组）
 		mSleep(100)
-		touchUp(1, 512, 141)
+		touchUp(1, 274, 142)
 		mSleep(2500)
 	--	touchDown(1, 683, 82) -- 选休闲模式
 	--	mSleep(100)
