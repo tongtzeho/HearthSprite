@@ -1,10 +1,12 @@
 #### 平台要求
 
-Android模拟器（推荐逍遥安卓），分辨率设置为1024*576
+逍遥安卓模拟器2.3.0（http://azodl.blogspot.com/2015/08/memu_3.html ）
 
-安装Android版触动精灵（http://www.touchsprite.com/ ），给予root权限，导入Lua脚本，并打开悬浮窗
+推荐配置：分辨率1024\*576；4 CPU；2GB内存；Android 4.2.2系统；显卡优化（www.xyaz.cn/thread-751-1-1.html ）
 
-安装Android版炉石传说并更新至最新版本
+安装Android版触动精灵（http://www.touchsprite.com/ ），给予root权限，导入Lua脚本，打开悬浮窗
+
+安装Android版炉石传说（官方版）并更新至最新版本
 
 #### 运行方式
 
