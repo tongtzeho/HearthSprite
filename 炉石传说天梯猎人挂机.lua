@@ -21,8 +21,8 @@ function getState(fuzzy)
 		return 6 -- 对战模式主界面
 	elseif (isColor( 306, 94, 0xc18949, fuzzy) and isColor(279, 413, 0x3f221b, fuzzy) and isColor(671, 284, 0xaf7336, fuzzy) and isColor(591, 30, 0xbf8b40, fuzzy)) then
 		return 7 -- 游戏主界面
-	elseif (isColor( 391,  273, 0xf4d652, fuzzy) and isColor( 479,  211, 0xd0bf96, fuzzy) and isColor( 522,  316, 0xd8c8af, fuzzy) and isColor( 603,  235, 0x454241, fuzzy) and isColor( 682,  279, 0x252321, fuzzy)) then
-		return 8 -- 断开连接
+	elseif (isColor( 513, 316, 0x000000, fuzzy) and isColor( 481, 317, 0xcf9c58, fuzzy) and isColor( 534, 328, 0xb68d4b, fuzzy) and isColor( 524, 319, 0xb3a392, fuzzy)) then
+		return 8 -- 弹出对话框
 	else
 		return 0 -- 未知状态
 	end
@@ -238,7 +238,7 @@ while (true) do
 		mSleep(100)
 		touchUp(1, 510, 161)
 		mSleep(4000)
-	elseif (state == 8) then -- 断线重连点确定
+	elseif (state == 8) then -- 弹出对话框点确定
 		touchDown(1, 511, 319)
 		mSleep(100)
 		touchUp(1, 511, 319)
