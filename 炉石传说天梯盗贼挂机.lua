@@ -2,7 +2,7 @@ require "TSLib"
 
 function isSharpYellow(x, y)
 	r ,g, b = getColorRGB(x, y)
-	return r+g >= 480 and b <= 6
+	return r+g >= 490 and b <= 63
 end
 
 function isSharpGreen(x, y)
@@ -50,14 +50,23 @@ function battle(fuzzy)
 		end
 		pickpoint = {}
 		findgreen = false
+		findyellow = false
 		for j = 266,689,1 do
-			if ((isSharpGreen(j, 524) and isSharpGreen(j, 523)) or (isSharpYellow(j, 524) and isSharpYellow(j, 523))) then
-				findgreen = true
+			if ((isSharpYellow(j, 524) and isSharpYellow(j, 523))) then -- 先找连击
+				findyellow = true
 				table.insert(pickpoint, j)
 			end
 		end
-		if (not findgreen) then
-			break
+		if (not findyellow) then
+			for j = 266,689,1 do
+				if ((isSharpGreen(j, 524) and isSharpGreen(j, 523))) then
+					findgreen = true
+					table.insert(pickpoint, j)
+				end
+			end
+			if (not findgreen) then
+				break
+			end
 		end
 		x = pickpoint[math.ceil(math.random()*(#pickpoint))]
 		touchDown(1, x, 524) -- 选牌
