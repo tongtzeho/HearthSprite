@@ -51,7 +51,7 @@ function battle(fuzzy)
 		pickpoint = {}
 		findgreen = false
 		for j = 266,689,1 do
-			if ((isSharpGreen(j, 524) and isSharpGreen(j, 523)) or (isSharpYellow(j, 524) and isSharpYellow(j, 523))) then
+			if (isSharpGreen(j, 524) and isSharpGreen(j, 523)) then
 				findgreen = true
 				table.insert(pickpoint, j)
 			end
