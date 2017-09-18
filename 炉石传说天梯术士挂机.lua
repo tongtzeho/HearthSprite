@@ -1,8 +1,8 @@
 require "TSLib"
 
-function isSharpYellow(x, y)
+function isSharpGreenOrYellow(x, y)
 	r ,g, b = getColorRGB(x, y)
-	return r+g >= 480 and b <= 6
+	return (g == 255 and b < 130) or (r+g >= 480 and b <= 6)
 end
 
 function isSharpGreen(x, y)
@@ -51,7 +51,7 @@ function battle(fuzzy)
 		pickpoint = {}
 		findgreen = false
 		for j = 266,689,1 do
-			if (isSharpGreen(j, 524) and isSharpGreen(j, 523)) then
+			if (isSharpGreenOrYellow(j, 524) and isSharpGreenOrYellow(j, 523)) then
 				findgreen = true
 				table.insert(pickpoint, j)
 			end
@@ -89,6 +89,7 @@ function battle(fuzzy)
 			i = i + 1
 		end		
 	end
+	mSleep(math.random(800, 1200))
 	touchDown(1, 601, 410) -- 英雄技能
 	mSleep(math.random(120, 200))
 	touchUp(1, 601, 410)
