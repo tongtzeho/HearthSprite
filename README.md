@@ -1,8 +1,8 @@
 ### 平台要求
 
-逍遥安卓模拟器2.3.0（http://azodl.blogspot.com/2015/08/memu_3.html ）
+逍遥安卓模拟器2.3.0或2.5.0（http://azodl.blogspot.com/2015/08/memu_3.html ）
 
-模拟器推荐配置：分辨率1024\*576；4 CPU（电脑BIOS必须开启VT虚拟化）；2GB内存
+模拟器推荐配置：分辨率1024\*576；4 CPU（电脑BIOS必须开启VT虚拟化）；2GB或以上内存
 
 电脑建议进行显卡优化（http://www.xyaz.cn/thread-751-1-1.html ）
 
