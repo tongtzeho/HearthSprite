@@ -7,7 +7,7 @@ end
 
 function isSharpGreen(x, y)
 	r ,g, b = getColorRGB(x, y)
-	return g == 255 and b < 130
+	return (g == 255 and b < 130) or (r >= 128 and r <= 160 and g >= 176 and b <= 70) -- 风领主奥拉基尔
 end
 
 function getState(fuzzy)
