@@ -121,7 +121,7 @@ function battle(fuzzy)
 			mSleep(math.random(120, 200))
 			touchUp(1, 516, 103)
 			mSleep(math.random(800, 1200))
-			if (isColor( 617, 327, 0x000000) and isColor( 630, 323, 0x000000) and isColor( 602, 327, 0x000000) and isColor( 646, 327, 0x000000)) then
+			if (isColor( 574,  321, 0x000000, 85) and isColor( 621,  338, 0x000000, 85) and isColor( 621,  304, 0x000000, 85) and isColor( 588,  305, 0x000000, 85)) then
 				taunt = true
 			else
 				i = i + 1
@@ -143,7 +143,7 @@ function battle(fuzzy)
 				mSleep(math.random(120, 200))
 				touchUp(1, tox, 199)
 				mSleep(math.random(800, 1200))
-				if (isColor( 617, 327, 0x000000) and isColor( 630, 323, 0x000000) and isColor( 602, 327, 0x000000) and isColor( 646, 327, 0x000000)) then
+				if (isColor( 574,  321, 0x000000, 85) and isColor( 621,  338, 0x000000, 85) and isColor( 621,  304, 0x000000, 85) and isColor( 588,  305, 0x000000, 85)) then
 					taunt = true
 				else
 					i = i + 1
@@ -169,7 +169,7 @@ function battle(fuzzy)
 					mSleep(math.random(120, 200))
 					touchUp(1, tox, 199)
 					mSleep(math.random(800, 1200))
-					if (isColor( 617, 327, 0x000000) and isColor( 630, 323, 0x000000) and isColor( 602, 327, 0x000000) and isColor( 646, 327, 0x000000)) then
+					if (isColor( 574,  321, 0x000000, 85) and isColor( 621,  338, 0x000000, 85) and isColor( 621,  304, 0x000000, 85) and isColor( 588,  305, 0x000000, 85)) then
 						tox = tox + 34
 					else
 						hit = true
