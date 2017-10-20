@@ -195,9 +195,7 @@ math.randomseed(os.time())
 
 while (true) do
 	state = getState(75)
-	touchDown(1, 273, 50)
-	mSleep(100)
-	touchUp(1, 273, 50)
+	os.execute("input tap 273 50")
 	if (state == 3) then
 		touchDown(1, 810, 249)  -- 结束回合按钮
 		mSleep(100)
@@ -205,35 +203,22 @@ while (true) do
 	elseif (state == 2) then
 		battle(80)
 	elseif (state == 1) then
-		touchDown(1, 514, 423) -- 确认选牌
-		mSleep(100)
-		touchUp(1, 514, 423)
+		os.execute("input tap 514 423") -- 确认选牌
+		mSleep(1000)
 	elseif (state == 6) then -- 选卡组、选模式、开始
-		touchDown(1, 276, 365) -- 选卡组（左下的卡组）
-		mSleep(100)
-		touchUp(1, 276, 365)
-		mSleep(2500)
-	--	touchDown(1, 683, 82) -- 选休闲模式
-	--	mSleep(100)
-	--	touchUp(1, 683, 82)
+		os.execute("input tap 276 365") -- 选卡组（左下的卡组）
+		mSleep(2500)		
+	--	os.execute("input tap 683 82") -- 选休闲模式
 	--	mSleep(2500)
-		touchDown(1, 773, 82) -- 选排名模式
-		mSleep(100)
-		touchUp(1, 773, 82)
+		os.execute("input tap 773 82") -- 选排名模式
 		mSleep(2500)
-		touchDown(1, 725, 435) -- 开始对战（没有选择标准/狂野）
-		mSleep(100)
-		touchUp(1, 725, 435)
+		os.execute("input tap 725 435") -- 开始对战（没有选择标准/狂野）
 		mSleep(4000)
 	elseif (state == 7) then -- 选对战模式
-		touchDown(1, 510, 161)
-		mSleep(100)
-		touchUp(1, 510, 161)
+		os.execute("input tap 509 163")
 		mSleep(4000)
 	elseif (state == 8) then -- 弹出对话框点确定
-		touchDown(1, 511, 319)
-		mSleep(100)
-		touchUp(1, 511, 319)
+		os.execute("input tap 511 319")
 		mSleep(4000)
 	else
 		mSleep(3000)
