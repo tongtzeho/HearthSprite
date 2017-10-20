@@ -29,19 +29,7 @@ function getState(fuzzy)
 end
 
 function battle(fuzzy)
-	if (math.random() < 0.5) then -- 打招呼
-		touchDown(1, 510, 403) 
-		mSleep(math.random(120, 200))
-		touchUp(1, 510, 403)
-		mSleep(math.random(800, 1200))
-		hix = {439, 582, 414, 613, 425, 606, 606, 606, 606, 606}
-		hiy = {337, 335, 382, 382, 422, 430, 430, 430, 430, 430}
-		hirandom = math.ceil(math.random()*10)
-		touchDown(1, hix[hirandom], hiy[hirandom]) 
-		mSleep(math.random(120, 200))
-		touchUp(1, hix[hirandom], hiy[hirandom])
-		mSleep(math.random(800, 1200))
-	end
+	mSleep(math.random(800, 1200))
 	i = 0
 	while i <= 7 do
 		curstate = getState(fuzzy)
