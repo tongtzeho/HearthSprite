@@ -23,6 +23,8 @@ function getState(fuzzy)
 		return 7 -- 游戏主界面
 	elseif (isColor( 513, 316, 0x000000, fuzzy) and isColor( 481, 317, 0xcf9c58, fuzzy) and isColor( 534, 328, 0xb68d4b, fuzzy) and isColor( 524, 319, 0xb3a392, fuzzy)) then
 		return 8 -- 弹出对话框
+	elseif (isColor( 872, 92, 0x198d7a, fuzzy) and isColor( 839, 493, 0x494947, fuzzy) and isColor( 268, 247, 0x11657d, fuzzy) and isColor( 129, 96, 0xeeeeee, fuzzy) and isColor( 589, 493, 0x11806e, fuzzy)) then
+		return 9 -- 安卓模拟器桌面
 	else
 		return 0 -- 未知状态
 	end
@@ -219,6 +221,9 @@ while (true) do
 		mSleep(4000)
 	elseif (state == 8) then -- 弹出对话框点确定
 		os.execute("input tap 511 319")
+		mSleep(4000)
+	elseif (state == 9) then -- 打开炉石传说
+		os.execute("input tap 151 190")
 		mSleep(4000)
 	else
 		mSleep(3000)
